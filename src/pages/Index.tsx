@@ -5,30 +5,63 @@ import { Star, Trophy, Users, MapPin, Phone, Mail } from "lucide-react";
 import kabaddiHero from "@/assets/kabaddi-hero.jpg";
 import player1 from "@/assets/player1.jpg";
 import player2 from "@/assets/player2.jpg";
+import player3 from "@/assets/player3.jpg";
+import player4 from "@/assets/player4.jpg";
 import villageView from "@/assets/village-view.jpg";
+import stars from "@/assets/stars.jpg";
+import captain from "@/assets/captain.jpg";
 
 const Index = () => {
   const players = [
     {
-      name: "Rajesh Kumar",
-      position: "Raider",
-      achievements: "State Championship Winner 2023",
+      name: "Shankar Jena",
+      position: "Captain",
+      achievements: "Best All-Rounder - District Level",
+      image: captain,
+      rating: 5,
+    },
+    {
+      name: "Subham Behera",
+      position: "Vice Captain",
+      achievements: "Best All-Rounder - District Level",
       image: player1,
       rating: 5,
     },
     {
-      name: "Priya Singh",
+      name: "Laxaman & Subham",
+      position: "Right cover & Left corner",
+      achievements: "Block Championship Winner 2023",
+      image: stars,
+      rating: 5,
+    },
+    {
+      name: "Subham Behera",
+      position: "Raider",
+      achievements: "Best Raider - District Level",
+      image: player4,
+      rating: 5,
+    },
+    {
+      name: "Amit Shethi",
       position: "Defender",
       achievements: "Best Defender - District Level",
       image: player2,
       rating: 5,
     },
+    {
+      name: "Rudra Sahu",
+      position: "All-Rounder",
+      achievements: "Best All-Rounder - District Level",
+      image: player3,
+      rating: 5,
+    }
   ];
 
   const achievements = [
-    { title: "District Champions", year: "2023", icon: Trophy },
-    { title: "State Semi-finalists", year: "2022", icon: Star },
-    { title: "50+ Active Players", year: "2024", icon: Users },
+    { title: "Local Tournament-Quarter finalists", year: "2022", icon: Star },
+    { title: "Block Champions", year: "2023", icon: Trophy },
+    { title: "District finalists", year: "2025", icon: Star },
+    { title: "50+ Active Players", year: "2025", icon: Users },
   ];
 
   return (
@@ -56,14 +89,27 @@ const Index = () => {
             Showcasing the finest kabaddi talent from our proud village. Where
             tradition meets excellence.
           </p>
+          <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">
+            Debut 2020
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
+              onClick={() =>
+                document
+                  .getElementById("players")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               size="lg"
               className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary transition-all duration-300 text-lg px-8 py-6 rounded-full shadow-warm"
             >
               Meet Our Players
             </Button>
             <Button
+              onClick={() =>
+                document
+                  .getElementById("achievements")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               variant="outline"
               size="lg"
               className="border-white/30 bg-primary text-white hover:bg-white/10 text-lg px-8 py-6 rounded-full backdrop-blur-sm"
@@ -123,7 +169,7 @@ const Index = () => {
       </section>
 
       {/* Players Showcase */}
-      <section className="py-20 px-6 bg-muted/30">
+      <section id="players" className="py-20 px-6 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -187,7 +233,15 @@ const Index = () => {
                 <p className="text-muted-foreground mb-4">
                   Showcase your kabaddi skills with Gobindapur's finest
                 </p>
-                <Button className="bg-primary hover:bg-primary-glow">
+                <Button
+                  onClick={() =>
+                    window.open(
+                      "https://aratt.ai/@govindapur_kabadi_team",
+                      "_blank"
+                    )
+                  }
+                  className="bg-primary hover:bg-primary-glow"
+                >
                   Contact Us
                 </Button>
               </div>
@@ -197,7 +251,7 @@ const Index = () => {
       </section>
 
       {/* Achievements Section */}
-      <section className="py-20 px-6">
+      <section id="achievements" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -248,7 +302,9 @@ const Index = () => {
                 </div>
                 <div className="text-left">
                   <h3 className="font-semibold text-foreground">Call Us</h3>
-                  <p className="text-muted-foreground mb-1">Brahmananda Swain</p>
+                  <p className="text-muted-foreground mb-1">
+                    Brahmananda Swain
+                  </p>
                   <p className="text-muted-foreground">+91 9861778176</p>
                 </div>
               </div>
@@ -270,6 +326,9 @@ const Index = () => {
           </div>
 
           <Button
+            onClick={() =>
+              window.open("https://aratt.ai/@govindapur_kabadi_team", "_blank")
+            }
             size="lg"
             className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-lg px-12 py-6 rounded-full shadow-warm"
           >
